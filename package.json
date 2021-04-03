@@ -1,0 +1,26 @@
+{
+	"name": "shopping-list",
+	"version": "1.0.0",
+	"description": "",
+	"main": "out/index.js",
+	"scripts": {
+		"build": "parcel build src/background.ts src/content-script.ts src/popup/index.html --no-source-maps",
+		"lint": "tsc --noEmit",
+		"pm2": "npm run build && pm2 start ecosystem.config.js"
+	},
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"@types/chrome": "^0.0.134",
+		"@types/react": "^17.0.3",
+		"@types/react-dom": "^17.0.3",
+		"parcel-bundler": "^1.12.5",
+		"prettier": "^2.2.1",
+		"typescript": "^4.2.3"
+	},
+	"dependencies": {
+		"parcel-plugin-static-files-copy": "^2.6.0",
+		"react": "^17.0.2",
+		"react-dom": "^17.0.2"
+	}
+}

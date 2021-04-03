@@ -1,0 +1,28 @@
+{
+	"manifest_version": 3,
+	"name": "Your App Name Here",
+	"version": "1.0.0",
+	"action": {
+		"default_icon": {
+			"512": "images/icon.png"
+		},
+		"default_title": "Click Me",
+		"default_popup": "popup/index.html"
+	},
+	"description": "A plain text description",
+	"icons": {
+		"512": "images/icon.png"
+	},
+
+	"author": "Sidharta",
+	"background": {
+		"service_worker": "background.js"
+	},
+	"content_scripts": [
+		{
+			"matches": ["*://*/*"],
+			"js": ["content-script.js"]
+		}
+	],
+	"permissions": ["tabs"]
+}
