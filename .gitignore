@@ -3,3 +3,4 @@ out
 dist
 .cache
 build.zip
+.parcel-cache
