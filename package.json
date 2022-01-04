@@ -2,8 +2,32 @@
 	"name": "your-app-name",
 	"version": "1.0.0",
 	"description": "",
+	"targets": {
+		"popup": {
+			"engines": {
+				"browsers": "Chrome 80"
+			},
+			"distDir": "./dist",
+			"source": "src/popup/index.html"
+		},
+		"backgroundScript": {
+			"engines": {
+				"node": ">= 12"
+			},
+			"distDir": "./dist",
+			"source": "src/content-script.ts"
+		},
+		"contentScript": {
+			"engines": {
+				"browsers": "Chrome 80"
+			},
+			"distDir": "./dist",
+			"source": "src/background.ts"
+		}
+	},
 	"scripts": {
-		"build": "parcel build src/background.ts src/content-script.ts src/popup/index.html --no-source-maps",
+		"build:dev": "parcel build --no-source-maps --no-optimize",
+		"build:prod": "parcel build --no-source-maps",
 		"upgrade": "npx npm-check-updates --upgrade",
 		"lint": "tsc --noEmit"
 	},
